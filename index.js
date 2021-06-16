@@ -49,8 +49,8 @@ Use the higher-order function called getYears to do the following:
 2. Receive a callback function getFinals from task 2 
 3. Return an array called years containing all of the years in the getFinals data set*/
 
-function getYears(array, getFinalsCb) {
-    const finalsDataSet = getFinalsCb(array) // getFinals(fifaData)
+function getYears(array, getFinalsCB) {
+    const finalsDataSet = getFinalsCB(array) // getFinals(fifaData)
     const years = finalsDataSet.map(function(item){
         return item.Year;
     })
@@ -91,10 +91,16 @@ hint: the strings returned need to exactly match the string in step 4.
  */
 
 function getWinnersByYear(array, getYearsCB, getWinnersCB) {
-    const finalsYears = getYearsCB(array);
-    const finalsCountries= getWinnersCB(array);
-    const stringArray 
-    return stringArray = `In ${}, ${} won the world cup!`
+    const finalsYears = getYearsCB(array, getFinals);
+    const finalsCountries= getWinnersCB(array, getFinals);
+    
+    const stringArray = []
+    var i;
+    for (i = 0; i < finalsYears.length; i++) {
+        const string = `In ${finalsYears[i]}, ${finalsCountries[i]} won the world cup!`
+        stringArray.push(string)
+    }
+    return stringArray; 
 }
 console.log(getWinnersByYear(fifaData, getYears, getWinners));
 
@@ -110,7 +116,7 @@ Use the higher order function getAverageGoals to do the following:
 */
 
 function getAverageGoals(getFinalsCB) {
-   /* code here */
+   const finalsDataSet = 
 }
 
 //console.log(getAverageGoals(getFinals(fifaData)));
